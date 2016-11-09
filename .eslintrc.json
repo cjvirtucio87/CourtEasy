@@ -18,12 +18,21 @@
             "unix"
         ],
         "quotes": [
-            "error",
+            "warn",
             "single"
         ],
         "semi": [
             "error",
             "always"
+        ],
+        "no-unused-vars": [
+          "warn"
+        ],
+        "no-undef": [
+          "warn"
+        ],
+        "no-console": [
+          "warn"
         ]
     }
 }
