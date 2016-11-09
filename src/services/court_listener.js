@@ -11,15 +11,12 @@ export class CourtListener {
     };
   }
 
+  // *RATE LIMIT: 100 per day.
   search(keys) {
-    // const query = self.buildQuery(keys);
     const url = this.buildUrl(keys);
-    console.log(url);
-    // console.log(url);
-    console.log(this.$http.get(url));
-    // console.log(encodeURIComponent(keys));
-      // .then(self.cacheResponse)
-      // .catch(self.logError);
+    return this.$http.get(url)
+      .then(self.cacheResponse)
+      .catch(self.logError);
   }
 
   cacheResponse(response) {
@@ -39,6 +36,7 @@ export class CourtListener {
 
   logError(reason) {
     console.log(reason);
+    throw new Error(reason);
   }
 
   get getCached() {
