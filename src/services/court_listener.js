@@ -27,9 +27,8 @@ export class CourtListener {
 
   cacheResponse(ctrl) {
     return response => {
-      console.log(response);
       const cached = ctrl.data.cached;
-      angular.copy(response.data, cached);
+      angular.copy(response.data.results, cached);
       return cached;
     };
   }
@@ -39,16 +38,11 @@ export class CourtListener {
   }
 
   logError(reason) {
-    console.log(reason);
     throw new Error(reason);
   }
 
   get getCached() {
     return this.data.cached;
-  }
-
-  set addCached(value) {
-    this.data.cached.push(value);
   }
 }
 

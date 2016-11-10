@@ -26,6 +26,5 @@ export const Component = {
   template:
   `
   <general-search query='$ctrl.searchResults' on-type='$ctrl.search($event)'></general-search>
-  <div ng-if='$ctrl.searchResults.length'>{{$ctrl.searchResults}}</div>
   `
 };
