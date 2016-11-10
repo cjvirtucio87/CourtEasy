@@ -13,8 +13,8 @@ export class Ctrl {
   }
 
   present(model) {
-    return cached => {
-      angular.copy(cached, model);
+    return response => {
+      angular.copy(response.data.results, model);
     };
   }
 }
