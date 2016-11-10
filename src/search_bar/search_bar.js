@@ -6,16 +6,14 @@ export class Ctrl {
 
   search(keys) {
     const self = this;
-    const model = self.searchResults;
-    self.CourtListener
+    const present = self.present.bind(self);
+    return self.CourtListener
       .search(keys)
-      .then(self.present(model));
+      .then(present);
   }
 
-  present(model) {
-    return response => {
-      angular.copy(response.data.results, model);
-    };
+  present(response) {
+    return angular.copy(response.data.results, this.searchResults);
   }
 }
 
@@ -25,6 +23,6 @@ export const Component = {
   controller: 'SearchBarCtrl',
   template:
   `
-  <general-search query='$ctrl.searchResults' on-type='$ctrl.search($event)'></general-search>
+  <general-search results='$ctrl.searchResults' on-type='$ctrl.search($event)'></general-search>
   `
 };
