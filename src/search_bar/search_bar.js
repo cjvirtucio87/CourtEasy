@@ -14,7 +14,6 @@ export class Ctrl {
 
   present(model) {
     return response => {
-      console.log(response.data.results);
       angular.copy(response.data.results, model);
     };
   }
