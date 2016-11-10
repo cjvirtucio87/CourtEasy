@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import merge from 'lodash/merge';
 
 export class CourtListener {
   constructor($http) {
@@ -20,7 +20,7 @@ export class CourtListener {
   }
 
   paramify(keys) {
-    return _.merge(self.DEFAULT_PARAMS, {q: keys.join('')});
+    return merge(self.DEFAULT_PARAMS, {q: keys.join('')});
   }
 }
 
