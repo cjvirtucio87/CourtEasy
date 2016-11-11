@@ -13,7 +13,6 @@ export class OpinionSearch {
     };
   }
 
-  // *RATE LIMIT: 100 per day for anon. Need to build Rails API for auth and 5000 per hour.
   search(keys) {
     const self = this;
     const params = self.paramify(keys);
