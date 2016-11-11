@@ -4,22 +4,28 @@ export default ['$stateProvider', '$urlRouterProvider', function ($stateProvider
   $stateProvider
     .state('caseFinder', {
       url: '/finder',
-      template:
-      `
-      <search-bar></search-bar>
-      `
-    })
-    .state('caseFinder.show', {
-      url: '/finder/:id',
-      template:
-      `
-      <case-text></case-text>
-      `,
-      resolve: {
-        case: ['OpinionShow', '$stateParams', function(OpinionShow, $stateParams) {
-          console.log($stateParams.id);
-          return OpinionShow.find($stateParams);
-        }]
+      controller: ['OpinionFinder', function(OpinionFinder) {
+        const vm = this;
+        vm.select = $event => {
+          console.log($event);
+          OpinionFinder.find($event.id)
+            .then(response => vm.case = response.data.results);
+        };
+      }],
+      controllerAs: 'cfc',
+      views: {
+        'index@': {
+          template:
+          `
+          <search-bar on-select='cfc.select($event)'></search-bar>
+          `
+        },
+        'show@': {
+          template:
+          `
+          <case-text case='cfc.case' ng-if='cfc.case'></case-text>
+          `
+        }
       }
     });
 }];

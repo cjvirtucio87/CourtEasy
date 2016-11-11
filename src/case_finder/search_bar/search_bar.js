@@ -12,8 +12,15 @@ export class Ctrl {
       .then(present);
   }
 
+  select(id) {
+    const self = this;
+    console.log(id);
+    self.onSelect({ $event: id });
+  }
+
   present(response) {
-    return angular.copy(response.data.results, this.searchResults);
+    const self = this;
+    return angular.copy(response.data.results, self.searchResults);
   }
 }
 
@@ -23,6 +30,6 @@ export const Component = {
   controller: 'SearchBarCtrl',
   template:
   `
-  <general-search results='$ctrl.searchResults' on-type='$ctrl.search($event)'></general-search>
+  <general-search results='$ctrl.searchResults' on-select='$ctrl.select($event)' on-type='$ctrl.search($event)'></general-search>
   `
 };
