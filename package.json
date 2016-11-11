@@ -19,8 +19,14 @@
   },
   "dependencies": {
     "angular": "^1.5.8",
-    "angular-bootstrap-npm": "^0.14.3",
+    "angular-ui-bootstrap": "^2.2.0",
+    "css-loader": "^0.25.0",
     "lodash": "^4.16.6",
-    "restangular": "^1.5.2"
+    "node-sass": "^3.11.2",
+    "resolve-url-loader": "^1.6.0",
+    "restangular": "^1.5.2",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7"
   }
 }

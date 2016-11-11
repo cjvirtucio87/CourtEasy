@@ -1,4 +1,4 @@
-require('angular-bootstrap-npm');
+require('angular-ui-bootstrap');
 
 import angular from 'angular';
 import * as searchBar from './search_bar/search_bar.js';
