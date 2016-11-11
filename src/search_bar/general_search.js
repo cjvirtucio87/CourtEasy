@@ -18,7 +18,9 @@ export const Component = {
   `
   <script type='text/ng-template' id='resultTpl.html'>
     <a tabindex='-1'>
-      <p>{{match.model.caseName}}, {{match.model.citation[0]}}</p>
+      <ul ng-repeat='(key,value) in match.model'>
+        <li>{{key}}: {{value}}</li>
+      </ul>
       <span ng-bind-html-unsafe='match.model'></span>
     </a>
   </script>

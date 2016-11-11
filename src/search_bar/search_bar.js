@@ -1,13 +1,13 @@
 export class Ctrl {
-  constructor (CourtListener) {
-    this.CourtListener = CourtListener;
+  constructor (OpinionSearch) {
+    this.OpinionSearch = OpinionSearch;
     this.searchResults = [];
   }
 
   search(keys) {
     const self = this;
     const present = self.present.bind(self);
-    return self.CourtListener
+    return self.OpinionSearch
       .search(keys)
       .then(present);
   }
@@ -17,7 +17,7 @@ export class Ctrl {
   }
 }
 
-Ctrl.$inject = ['CourtListener'];
+Ctrl.$inject = ['OpinionSearch'];
 
 export const Component = {
   controller: 'SearchBarCtrl',

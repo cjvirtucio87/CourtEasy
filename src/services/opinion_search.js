@@ -1,6 +1,6 @@
 import merge from 'lodash/merge';
 
-export class CourtListener {
+export class OpinionSearch {
   constructor($http) {
     const self = this;
     self.$http = $http;
@@ -24,4 +24,4 @@ export class CourtListener {
   }
 }
 
-CourtListener.$inject = ['$http'];
+OpinionSearch.$inject = ['$http'];
