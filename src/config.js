@@ -8,25 +8,21 @@ export default ['$stateProvider', '$urlRouterProvider', '$httpProvider', functio
   $stateProvider
     .state('caseFinder', {
       url: '/finder',
-      controller: ['OpinionFinder', function(OpinionFinder) {
-        const vm = this;
-        vm.select = $event => {
-          OpinionFinder.find($event.id)
-            .then(response => vm.case = response.data.results);
-        };
+      controller: ['OpinionShow', function(OpinionShow) {
+        // Can't pass binding to view template.
       }],
       controllerAs: 'cfc',
       views: {
         'index@': {
           template:
           `
-          <search-bar on-select='cfc.select($event)'></search-bar>
+          <search-bar></search-bar>
           `
         },
         'show@': {
           template:
           `
-          <case-text case='cfc.case' ng-if='cfc.case'></case-text>
+          <opinion-full class='opinion-full' opinion='cfc.opinion' ng-if='cfc.opinion'></opinion-full>
           `
         }
       }

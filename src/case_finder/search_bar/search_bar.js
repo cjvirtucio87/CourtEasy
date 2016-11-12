@@ -14,13 +14,16 @@ export class Ctrl {
 
   select(item) {
     const self = this;
-    console.log(item);
     self.opinion = item;
   }
 
   present(response) {
     const self = this;
     return angular.copy(response.data.results, self.searchResults);
+  }
+
+  fullText(opinion) {
+    const self = this;
   }
 }
 
@@ -31,6 +34,6 @@ export const Component = {
   template:
   `
   <general-search results='$ctrl.searchResults' on-select='$ctrl.select($event)' on-type='$ctrl.search($event)'></general-search>
-  <opinion-details ng-if='$ctrl.opinion' opinion='$ctrl.opinion'></opinion-details>
+  <opinion-details ng-if='$ctrl.opinion' on-fulltext='$ctrl.fullText($event)' opinion='$ctrl.opinion'></opinion-details>
   `
 };
