@@ -11,7 +11,6 @@ export default ['$stateProvider', '$urlRouterProvider', '$httpProvider', functio
       controller: ['OpinionFinder', function(OpinionFinder) {
         const vm = this;
         vm.select = $event => {
-          console.log($event);
           OpinionFinder.find($event.id)
             .then(response => vm.case = response.data.results);
         };

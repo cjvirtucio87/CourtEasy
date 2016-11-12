@@ -1,4 +1,5 @@
 import angular from 'angular';
+import sanitize from 'angular-sanitize';
 import uiBootstrap from 'angular-ui-bootstrap';
 import uiRouter from 'angular-ui-router';
 import config from './config.js';
@@ -11,7 +12,7 @@ import * as opinionDetails from './case_finder/search_bar/opinion_details.js';
 // Services
 import { OpinionSearch } from './services/opinion_search.js';
 
-angular.module('courtEasy', [uiBootstrap, uiRouter])
+angular.module('courtEasy', [uiBootstrap, uiRouter, sanitize])
   .config(config)
   .service('OpinionSearch', OpinionSearch)
   .controller('SearchBarCtrl', searchBar.Ctrl)
