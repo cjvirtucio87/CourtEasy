@@ -6,8 +6,7 @@ export class Ctrl {
 
   select($item) {
     const self = this;
-    console.log($item);
-    // self.onSelect({ $event: id });
+    self.onSelect({ $event: angular.copy($item, {}) });
   }
 }
 
@@ -27,7 +26,7 @@ export const Component = {
     </a>
   </script>
 
-  <input type='text' uib-typeahead="result.caseName for result in $ctrl.search($viewValue)" ng-model='$ctrl.query' ng-model-options='{debounce: 1000}' typeahead-template-url='resultTpl.html' typeahead-on-select='$ctrl.select' class='form-control'>
+  <input type='text' uib-typeahead="result.caseName for result in $ctrl.search($viewValue)" ng-model='$ctrl.query' ng-model-options='{debounce: 1000}' typeahead-template-url='resultTpl.html' typeahead-on-select='$ctrl.select($item)' class='form-control'>
   `
 };
 

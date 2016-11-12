@@ -12,10 +12,10 @@ export class Ctrl {
       .then(present);
   }
 
-  select(id) {
+  select(item) {
     const self = this;
-    console.log(id);
-    self.onSelect({ $event: id });
+    console.log(item);
+    self.opinion = item;
   }
 
   present(response) {
@@ -31,5 +31,6 @@ export const Component = {
   template:
   `
   <general-search results='$ctrl.searchResults' on-select='$ctrl.select($event)' on-type='$ctrl.search($event)'></general-search>
+  <opinion-details ng-if='$ctrl.opinion' opinion='$ctrl.opinion'></opinion-details>
   `
 };

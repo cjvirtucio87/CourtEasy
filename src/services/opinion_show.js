@@ -9,7 +9,7 @@ export class OpinionShow {
   find(id) {
     const self = this;
     return self.$http.get(self.ENDPOINT + id, {
-      params: { Authentication: self.AUTH_TOKEN}
+      headers: { Authentication: self.AUTH_TOKEN}
     });
   }
 }

@@ -1,6 +1,6 @@
 export default ['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+  // Routing
   $urlRouterProvider.otherwise('/finder');
-
   $stateProvider
     .state('caseFinder', {
       url: '/finder',
