@@ -19,7 +19,7 @@ export default ['$stateProvider', '$urlRouterProvider', '$httpProvider', functio
             <section class='row'>
               <div class='col-xs'>
               </div>
-              <div class='col-xs flex-xs-middle' style='text-align: center;'>
+              <div class='col-xs flex-xs-middle'>
                 <h1>Hello world</h1>
               </div>
               <div class='col-xs'>
@@ -28,7 +28,7 @@ export default ['$stateProvider', '$urlRouterProvider', '$httpProvider', functio
             <section class='row'>
               <div class='col-xs'>
               </div>
-              <div class='col-xs flex-xs-middle' style='text-align: center;'>
+              <div class='col-xs flex-xs-middle'>
                 <h1>Hello world</h1>
               </div>
               <div class='col-xs'>
