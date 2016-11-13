@@ -8,6 +8,7 @@ export class Ctrl {
   search(keys) {
     const self = this;
     const present = self.present.bind(self);
+    self._resetDetails();
     return self.OpinionSearch
       .search(keys)
       .then(present);
@@ -25,6 +26,11 @@ export class Ctrl {
 
   fullText(opinion) {
     this.$state.go('caseFinder.show', {id: opinion.id});
+  }
+
+  _resetDetails() {
+    console.log('firing');
+    this.opinion = undefined;
   }
 }
 
