@@ -2,6 +2,7 @@ require('../style.scss');
 
 import angular from 'angular';
 import sanitize from 'angular-sanitize';
+import animate from 'angular-animate';
 import uiBootstrap from 'angular-ui-bootstrap';
 import uiRouter from 'angular-ui-router';
 import config from './config.js';
@@ -16,7 +17,7 @@ import * as opinionFull from './case_finder/opinion/opinion_full.js';
 import { OpinionSearch } from './services/opinion_search.js';
 import { OpinionShow } from './services/opinion_show.js';
 
-angular.module('courtEasy', [uiBootstrap, uiRouter, sanitize])
+angular.module('courtEasy', [uiBootstrap, uiRouter, sanitize, animate])
   .config(config)
   .service('OpinionSearch', OpinionSearch)
   .service('OpinionShow', OpinionShow)

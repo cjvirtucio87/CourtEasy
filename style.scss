@@ -13,3 +13,23 @@ section.row#landing {
   background-repeat: no-repeat;
   background-position: center;
 }
+
+.opinion-animate {
+  -webkit-transition: 1s;
+}
+
+.opinion-animate.ng-enter {
+  opacity: 0;
+}
+
+.opinion-animate.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.opinion-animate.ng-leave {
+  opacity: 1;
+}
+
+.opinion-animate.ng-leave.ng-leave-active {
+  opacity: 0;
+}
