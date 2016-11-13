@@ -15,15 +15,25 @@ export default ['$stateProvider', '$urlRouterProvider', '$httpProvider', functio
         '@': {
           template:
           `
-          <div class='container'>
-            <div class='row'>
+          <div class="container-fluid">
+            <section class='row'>
               <div class='col-xs'>
-                Col 1 of 2
+              </div>
+              <div class='col-xs flex-xs-middle' style='text-align: center;'>
+                <h1>Hello world</h1>
               </div>
               <div class='col-xs'>
-                Col 1 of 2
               </div>
-            </div>
+            </section>
+            <section class='row'>
+              <div class='col-xs'>
+              </div>
+              <div class='col-xs flex-xs-middle' style='text-align: center;'>
+                <h1>Hello world</h1>
+              </div>
+              <div class='col-xs'>
+              </div>
+            </section>
           </div>
           `
         }
