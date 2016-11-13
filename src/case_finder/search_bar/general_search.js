@@ -29,8 +29,3 @@ export const Component = {
   <input type='text' uib-typeahead="result.caseName for result in $ctrl.search($viewValue)" ng-model='$ctrl.query' ng-model-options='{debounce: 1000}' typeahead-template-url='resultTpl.html' typeahead-on-select='$ctrl.select($item)' class='form-control'>
   `
 };
-
-
-// <ul ng-repeat='(key,value) in match.model'>
-//   <li>{{key}}: {{value}}</li>
-// </ul>

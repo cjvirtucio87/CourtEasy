@@ -1,4 +1,3 @@
-require('../style.scss');
 import angular from 'angular';
 import sanitize from 'angular-sanitize';
 import uiBootstrap from 'angular-ui-bootstrap';

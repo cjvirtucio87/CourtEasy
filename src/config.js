@@ -17,11 +17,11 @@ export default ['$stateProvider', '$urlRouterProvider', '$httpProvider', functio
           `
           <div class='container'>
             <div class='row'>
-              <div class='col-xs-6 col-xs-offset-3'>
-                <div class='card' id='search-card'>
-                  <h2>Enter keywords here</h2>
-                  <search-bar></search-bar>
-                </div>
+              <div class='col-xs'>
+                Col 1 of 2
+              </div>
+              <div class='col-xs'>
+                Col 1 of 2
               </div>
             </div>
           </div>
