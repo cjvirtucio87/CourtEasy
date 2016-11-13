@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "start": "node ./server.js",
-    "postinstall": "npm install",
+    "deploy": "NODE_ENV=production webpack -p && node ./server.js",
+    "postinstall": "NODE_ENV=production webpack -p",
     "dev": "webpack-dev-server --progress --colors",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
