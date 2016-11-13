@@ -19,8 +19,9 @@ export default ['$stateProvider', '$urlRouterProvider', '$httpProvider', functio
             <section class='row' id='landing'>
               <div class='col-xs'>
               </div>
-              <div class='col-xs flex-xs-middle'>
-                <h1>Court Easy</h1>
+              <div class='col-xs-6 flex-xs-middle'>
+                <h1 class='display-1'>Court Easy</h1>
+                <p class='lead'>Your central repository for all things <strong>legal</strong></p>
               </div>
               <div class='col-xs'>
               </div>
@@ -28,8 +29,9 @@ export default ['$stateProvider', '$urlRouterProvider', '$httpProvider', functio
             <section class='row'>
               <div class='col-xs'>
               </div>
-              <div class='col-xs flex-xs-middle'>
-                <h1>Look up a Case</h1>
+              <div class='col-xs-6 flex-xs-middle'>
+                <h1 class='display-4'>Case Finder</h3>
+                <p class='lead'>Look up a case</p>
                 <search-bar></search-bar>
               </div>
               <div class='col-xs'>
