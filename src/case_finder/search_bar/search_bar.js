@@ -1,6 +1,7 @@
 export class Ctrl {
-  constructor (OpinionSearch) {
+  constructor (OpinionSearch, $state) {
     this.OpinionSearch = OpinionSearch;
+    this.$state = $state;
     this.searchResults = [];
   }
 
@@ -23,11 +24,11 @@ export class Ctrl {
   }
 
   fullText(opinion) {
-    const self = this;
+    this.$state.go('caseFinder.show', {id: opinion.id});
   }
 }
 
-Ctrl.$inject = ['OpinionSearch'];
+Ctrl.$inject = ['OpinionSearch', '$state'];
 
 export const Component = {
   controller: 'SearchBarCtrl',
