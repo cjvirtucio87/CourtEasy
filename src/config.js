@@ -16,11 +16,11 @@ export default ['$stateProvider', '$urlRouterProvider', '$httpProvider', functio
           template:
           `
           <div class="container-fluid">
-            <section class='row'>
+            <section class='row' id='landing'>
               <div class='col-xs'>
               </div>
               <div class='col-xs flex-xs-middle'>
-                <h1>Hello world</h1>
+                <h1>Court Easy</h1>
               </div>
               <div class='col-xs'>
               </div>
@@ -29,7 +29,8 @@ export default ['$stateProvider', '$urlRouterProvider', '$httpProvider', functio
               <div class='col-xs'>
               </div>
               <div class='col-xs flex-xs-middle'>
-                <h1>Hello world</h1>
+                <h1>Look up a Case</h1>
+                <search-bar></search-bar>
               </div>
               <div class='col-xs'>
               </div>

@@ -1,12 +1,15 @@
 $bg-img: url('/img/backroom.jpeg');
 
 section.row {
-  background-image: $bg-img;
-  background-repeat: no-repeat;
-  background-position: center;
   height: 100vh;
 
   div.col-xs {
     text-align: center;
   }
+}
+
+section.row#landing {
+  background-image: $bg-img;
+  background-repeat: no-repeat;
+  background-position: center;
 }
