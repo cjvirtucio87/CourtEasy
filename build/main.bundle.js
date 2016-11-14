@@ -68353,7 +68353,7 @@
 	/** Used to access faster Node.js helpers. */
 	var nodeUtil = (function() {
 	  try {
-	    return freeProcess && freeProcess.binding('util');
+	    return freeProcess && freeProcess.binding && freeProcess.binding('util');
 	  } catch (e) {}
 	}());
 
