@@ -35,7 +35,7 @@ module.exports = {
   },
   module: {
     loaders: [
-      //  { test: /\.js$/, exclude: [/node_modules/], loader: 'babel-loader' },
+       { test: /\.js$/, exclude: [/node_modules/], loader: 'babel-loader' },
        { test: /\.scss$/, exclude: [/node_modules/], loaders: ['style', 'css', 'sass'] },
        { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000' },
        { test: /\.(png|jpeg)$/, loader: 'url-loader?limit=8192' },
