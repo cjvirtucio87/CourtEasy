@@ -1,5 +1,6 @@
 require('path');
 require('webpack');
+require('bootstrap-loader');
 
 // Plugins
 const ProvidePlugin = require('webpack/lib/ProvidePlugin');
@@ -25,7 +26,7 @@ const provide = new ProvidePlugin({
 });
 
 module.exports = {
-  entry: ['bootstrap-loader', './src/app.js'],
+  entry: './src/app.js',
   output: {
     path: __dirname,
     filename: 'bundle.js'
