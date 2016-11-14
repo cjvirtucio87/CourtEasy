@@ -41,7 +41,7 @@
     "jade": "^1.11.0",
     "jquery": "^3.1.1",
     "lodash": "^4.16.6",
-    "node-sass": "^3.11.2",
+    "node-sass": "^3.12.2",
     "postcss": "^5.2.5",
     "postcss-loader": "^1.1.1",
     "postcss-smart-import": "^0.5.1",
