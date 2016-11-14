@@ -27,8 +27,8 @@ const provide = new ProvidePlugin({
 module.exports = {
   entry: ['bootstrap-loader', './src/app.js'],
   output: {
-    path: __dirname,
-    filename: 'bundle.js'
+    path: __dirname + "/build",
+    filename: '[name].bundle.js'
   },
   devServer: {
     inline: true
