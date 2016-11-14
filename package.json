@@ -4,8 +4,8 @@
   "description": "",
   "scripts": {
     "start": "node ./server.js",
-    "deploy": "webpack -p && node ./server.js",
-    "postinstall": "webpack",
+    "deploy": "NODE_ENV=production webpack -p && node ./server.js",
+    "postinstall": "NODE_ENV=production webpack",
     "dev": "webpack-dev-server --progress --colors",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -27,6 +27,7 @@
     "angular-ui-router": "^0.3.2",
     "async": "^2.1.2",
     "autoprefixer": "^6.5.3",
+    "babel-polyfill": "^6.16.0",
     "bootstrap": "^4.0.0-alpha.5",
     "bootstrap-loader": "^1.3.0",
     "css-loader": "^0.25.0",
