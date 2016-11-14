@@ -1,4 +1,5 @@
 require('../style.scss');
+require('bluebird');
 
 import angular from 'angular';
 import sanitize from 'angular-sanitize';
@@ -16,11 +17,13 @@ import * as opinionFull from './case_finder/opinion/opinion_full.js';
 // Services
 import { OpinionSearch } from './services/opinion_search.js';
 import { OpinionShow } from './services/opinion_show.js';
+import { LoadSpin } from './services/load_spin.js';
 
 angular.module('courtEasy', [uiBootstrap, uiRouter, sanitize, animate])
   .config(config)
   .service('OpinionSearch', OpinionSearch)
   .service('OpinionShow', OpinionShow)
+  .service('LoadSpin', LoadSpin)
   .controller('SearchBarCtrl', searchBar.Ctrl)
   .component('searchBar', searchBar.Component)
   .controller('GeneralSearchCtrl', generalSearch.Ctrl)

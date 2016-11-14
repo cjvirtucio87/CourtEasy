@@ -7,9 +7,6 @@ export default ['$stateProvider', '$urlRouterProvider', '$httpProvider', functio
   $urlRouterProvider.otherwise('/');
   $stateProvider
     .state('landing', {
-      abstract: true
-    })
-    .state('landing.index', {
       url: '/',
       views: {
         '@': {

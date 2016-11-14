@@ -1,7 +1,8 @@
 export class Ctrl {
-  constructor (OpinionSearch, $state) {
+  constructor (OpinionSearch, $state, LoadSpin) {
     this.OpinionSearch = OpinionSearch;
     this.$state = $state;
+    this.LoadSpin = LoadSpin;
     this.searchResults = [];
   }
 
@@ -9,8 +10,10 @@ export class Ctrl {
     const self = this;
     const present = self.present.bind(self);
     self._resetDetails();
+    self.LoadSpin.searching();
     return self.OpinionSearch
       .search(keys)
+      .then(self.LoadSpin.success)
       .then(present);
   }
 
@@ -34,7 +37,7 @@ export class Ctrl {
   }
 }
 
-Ctrl.$inject = ['OpinionSearch', '$state'];
+Ctrl.$inject = ['OpinionSearch', '$state', 'LoadSpin'];
 
 export const Component = {
   controller: 'SearchBarCtrl',
