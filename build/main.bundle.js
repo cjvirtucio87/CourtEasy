@@ -65787,7 +65787,7 @@
 	    url: '/',
 	    views: {
 	      '@': {
-	        template: '\n          <div class="container-fluid">\n            <section class=\'row\' id=\'landing\'>\n              <div class=\'col-xs\'>\n              </div>\n              <div class=\'col-xs-6 flex-xs-middle\'>\n                <h1 class=\'display-1\'>Court Easy</h1>\n                <p class=\'lead\'>Your central repository for all things <strong>legal</strong></p>\n              </div>\n              <div class=\'col-xs\'>\n              </div>\n            </section>\n            <section class=\'row\'>\n              <div class=\'col-xs\'>\n              </div>\n              <div class=\'col-xs-6 flex-xs-middle\'>\n                <h1 class=\'display-4\'>Case Finder</h3>\n                <p class=\'lead\'>Look up a case</p>\n                <search-bar></search-bar>\n              </div>\n              <div class=\'col-xs\'>\n              </div>\n            </section>\n          </div>\n          '
+	        template: '\n          <div class="container-fluid">\n            <section class=\'row\' id=\'landing\'>\n              <div class=\'col-md\'>\n              </div>\n              <div class=\'col-md-6 flex-md-middle\'>\n                <h1 class=\'display-1\'>Court Easy</h1>\n                <p class=\'lead\'>Your central repository for all things <strong>legal</strong></p>\n              </div>\n              <div class=\'col-md\'>\n              </div>\n            </section>\n            <section class=\'row\'>\n              <div class=\'col-md\'>\n              </div>\n              <div class=\'col-md-6 flex-md-middle\'>\n                <h1 class=\'display-4\'>Case Finder</h3>\n                <p class=\'lead\'>Look up a case</p>\n                <search-bar></search-bar>\n              </div>\n              <div class=\'col-md\'>\n              </div>\n            </section>\n          </div>\n          '
 	      }
 	    }
 	  }).state('caseFinder.show', {
@@ -69088,7 +69088,7 @@
 
 
 	// module
-	exports.push([module.id, "section.row {\n  height: 100vh; }\n  section.row div.col-xs-6 {\n    text-align: center; }\n\nsection.row#landing {\n  background-image: url(\"/img/backroom.jpeg\");\n  background-repeat: no-repeat;\n  background-position: center; }\n\n.opinion-animate {\n  -webkit-transition: 1s; }\n\n.opinion-animate.ng-enter {\n  opacity: 0; }\n\n.opinion-animate.ng-enter.ng-enter-active {\n  opacity: 1; }\n\n.opinion-animate.ng-leave {\n  opacity: 1; }\n\n.opinion-animate.ng-leave.ng-leave-active {\n  opacity: 0; }\n", ""]);
+	exports.push([module.id, "section.row {\n  height: 100vh; }\n  section.row div.col-md-6 {\n    text-align: center; }\n\nsection.row#landing {\n  background-image: url(\"/img/backroom.jpeg\");\n  background-repeat: no-repeat;\n  background-position: center; }\n\n.opinion-animate {\n  -webkit-transition: 1s; }\n\n.opinion-animate.ng-enter {\n  opacity: 0; }\n\n.opinion-animate.ng-enter.ng-enter-active {\n  opacity: 1; }\n\n.opinion-animate.ng-leave {\n  opacity: 1; }\n\n.opinion-animate.ng-leave.ng-leave-active {\n  opacity: 0; }\n", ""]);
 
 	// exports
 

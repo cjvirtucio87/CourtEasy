@@ -17,24 +17,24 @@ export default ['$stateProvider', '$urlRouterProvider', '$httpProvider', functio
           `
           <div class="container-fluid">
             <section class='row' id='landing'>
-              <div class='col-xs'>
+              <div class='col-md'>
               </div>
-              <div class='col-xs-6 flex-xs-middle'>
+              <div class='col-md-6 flex-md-middle'>
                 <h1 class='display-1'>Court Easy</h1>
                 <p class='lead'>Your central repository for all things <strong>legal</strong></p>
               </div>
-              <div class='col-xs'>
+              <div class='col-md'>
               </div>
             </section>
             <section class='row'>
-              <div class='col-xs'>
+              <div class='col-md'>
               </div>
-              <div class='col-xs-6 flex-xs-middle'>
+              <div class='col-md-6 flex-md-middle'>
                 <h1 class='display-4'>Case Finder</h3>
                 <p class='lead'>Look up a case</p>
                 <search-bar></search-bar>
               </div>
-              <div class='col-xs'>
+              <div class='col-md'>
               </div>
             </section>
           </div>
