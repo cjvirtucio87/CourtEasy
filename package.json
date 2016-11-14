@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "node ./server.js",
+    "start": "NODE_ENV=production webpack -p && node ./server.js",
     "deploy": "NODE_ENV=production webpack -p && node ./server.js",
-    "postinstall": "NODE_ENV=production webpack -p",
+    "postinstall": "NODE_ENV=production npm install",
     "dev": "webpack-dev-server --progress --colors",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
