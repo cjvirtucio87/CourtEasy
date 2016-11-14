@@ -1,5 +1,6 @@
 require('path');
 require('webpack');
+// require('./node_modules/bootstrap-loader/lib/bootstrap.loader.js');
 
 // Plugins
 const ProvidePlugin = require('webpack/lib/ProvidePlugin');
@@ -39,7 +40,8 @@ module.exports = {
        { test: /\.scss$/, exclude: [/node_modules/], loaders: ['style', 'css', 'sass'] },
        { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000' },
        { test: /\.(png|jpeg)$/, loader: 'url-loader?limit=8192' },
-       { test: /\.css$/, loaders: [ 'style-loader', 'css-loader?importLoaders=1', 'postcss-loader'] }
+       { test: /\.css$/, loaders: [ 'style-loader', 'css-loader?importLoaders=1', 'postcss-loader'] },
+       { test: /bootstrap\/dist\/js\/umd\//, loader: 'imports?jQuery=jquery' },
     ]
   },
   plugins: [provide]
