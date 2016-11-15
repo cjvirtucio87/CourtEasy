@@ -12,19 +12,53 @@ export default ['$stateProvider', '$urlRouterProvider', '$httpProvider', functio
         '@': {
           template:
           `
-          <section class='row' id='landing'>
+          <section class='row' id='landing-start'>
             <div class='col-md'>
             </div>
             <div class='col-md-6 flex-md-middle'>
               <h1 class='display-1'>Court Easy</h1>
-              <p class='lead'>Your central repository for all things <strong>legal</strong></p>
+              <p>Your central repository for all things <strong>legal</strong></p>
             </div>
             <div class='col-md'>
             </div>
           </section>
           `
         },
-        'case-finder@': {
+        'case-finder-landing@': {
+          template:
+          `
+          <section class='row'>
+            <div class='col-md'>
+            </div>
+            <div class='col-md-6 flex-md-middle'>
+              <h1 class='display-4'>Case Finder</h3>
+              <p>Deadline got you down? We make legal research a breeze with <strong>Case Finder</strong>, powered by the <strong>The Free Law Project</strong>.</p>
+            </div>
+            <div class='col-md'>
+            </div>
+          </section>
+          `
+        },
+        'case-finder-landing-typing@': {
+          template:
+          `
+          <section class='row' id='landing-casefinder-typing'>
+            <div class='col-md'>
+            </div>
+            <div class='col-md-6 flex-md-middle'>
+              <p>This app interfaces with the <strong>Court Listener API</strong> to quickly serve the data you need to make your persuasive arguments.</p>
+            </div>
+            <div class='col-md'>
+            </div>
+          </section>
+          `
+        }
+      }
+    })
+    .state('caseFinder', {
+      url: '/:id',
+      views: {
+        '@': {
           template:
           `<section class='row'>
             <div class='col-md'>
@@ -36,17 +70,20 @@ export default ['$stateProvider', '$urlRouterProvider', '$httpProvider', functio
             </div>
             <div class='col-md'>
             </div>
-          </section>`
-        }
-      }
-    })
-    .state('caseFinder.show', {
-      url: '/:id',
-      views: {
-        '@': {
-          template:
+          </section>
           `
-          <opinion-full opinion='$ctrl.opinion'></opinion-full>
+        },
+        'case-finder-show@': {
+          template:
+          `<section class='row'>
+            <div class='col-md'>
+            </div>
+            <div class='col-md-10 flex-md-middle'>
+              <opinion-full opinion='$ctrl.opinion'></opinion-full>
+            </div>
+            <div class='col-md'>
+            </div>
+          </section>
           `,
           controller: ['opinion', function(opinion) {
             this.opinion = opinion;

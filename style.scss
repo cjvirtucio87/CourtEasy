@@ -1,17 +1,28 @@
-$bg-img: url('/img/backroom.jpeg');
+$landing-start-img: url('/img/backroom.jpeg');
+$landing-casefinder-typing: url('/img/typing.jpeg');
 
 section.row {
   height: 100vh;
-
+  font-size: 1.50em;
   div.col-md-6 {
     text-align: center;
   }
 }
 
-section.row#landing {
-  background-image: $bg-img;
+section.row#landing-start {
+  background-image: $landing-start-img;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  color: white;
+}
+
+section.row#landing-casefinder-typing {
+  background-image: $landing-casefinder-typing;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
 }
 
 i.fa-spinner {
