@@ -36,7 +36,7 @@ export class Ctrl {
   }
 
   fullText(opinion) {
-    this.$state.go('caseFinder.show', {id: opinion.id});
+    
   }
 }
 

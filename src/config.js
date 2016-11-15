@@ -96,7 +96,7 @@ export default ['$stateProvider', '$urlRouterProvider', '$httpProvider', functio
           </section>
           `
         },
-        'case-finder-show@': {
+        '1@': {
           template:
           `<section class='row'>
             <div class='col-md'>
@@ -108,14 +108,11 @@ export default ['$stateProvider', '$urlRouterProvider', '$httpProvider', functio
             </div>
           </section>
           `,
+          // Need to figure out how to not let this view load until you click on the previewed case.
           controller: ['opinion', function(opinion) {
             this.opinion = opinion;
           }],
-          controllerAs: '$ctrl',
-          resolve: {
-            opinion: ['OpinionShow', '$stateParams', function(OpinionShow, $stateParams) {
-              return OpinionShow.find($stateParams.id);
-            }]
+          controllerAs: '$ctrl'
           }
         }
       }
