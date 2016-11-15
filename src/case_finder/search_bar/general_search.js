@@ -14,8 +14,7 @@ export class Ctrl {
   }
 
   select($item) {
-    const self = this;
-    self.onSelect({ $event: angular.copy($item, {}) });
+    this.onSelect({ $event: angular.copy($item, {}) });
   }
 }
 
