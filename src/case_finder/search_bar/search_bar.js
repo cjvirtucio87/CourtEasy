@@ -57,7 +57,7 @@ export const Component = {
   </div>
   <div class='row'>
     <div class='col-md'>
-      <opinion-details class='opinion-details' ng-if='$ctrl.opinion' on-fulltext='$ctrl.fullText($event)' opinion='$ctrl.opinion'></opinion-details>
+      <opinion-details ng-show='$ctrl.opinion' on-fulltext='$ctrl.fullText($event)' opinion='$ctrl.opinion'></opinion-details>
     </div>
   </div>
   `

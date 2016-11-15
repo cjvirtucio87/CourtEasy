@@ -18,23 +18,23 @@ i.fa-spinner {
   visibility: hidden;
 }
 
-opinion-animate {
-  transition: 1s linear all;
-  -webkit-transition: 1s linear all;
+div.opinion-animate {
+  transition: 0.5s linear all;
+  -webkit-transition: 0.5s linear all;
 }
 
-opinion-animate.ng-enter {
+div.opinion-animate.ng-enter {
   opacity: 0;
 }
 
-opinion-animate.ng-enter.ng-enter-active {
+div.opinion-animate.ng-enter.ng-enter-active {
   opacity: 1;
 }
 
-opinion-animate.ng-leave {
+div.opinion-animate.ng-leave {
   opacity: 1;
 }
 
-opinion-animate.ng-leave.ng-leave-active {
+div.opinion-animate.ng-leave.ng-leave-active {
   opacity: 0;
 }

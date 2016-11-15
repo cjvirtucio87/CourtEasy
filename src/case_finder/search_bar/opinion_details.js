@@ -13,7 +13,7 @@ export const Component = {
   template:
   `
   <div class='card'>
-    <div class='card-block'>
+    <div ng-if='$ctrl.opinion' class='card-block opinion-animate'>
       <p class='card-text'><strong>{{$ctrl.opinion.caseName}}</strong> was decided by the {{$ctrl.opinion.court}}, and filed before it on <strong>{{$ctrl.opinion.dateFiled | date}}</strong></p>
       <p class='card-text'>Here's an excerpt from the text: </p>
       <blockquote class='blockquote'>
