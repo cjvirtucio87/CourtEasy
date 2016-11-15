@@ -7,7 +7,7 @@ export class Ctrl {
   }
 
   _present(self) {
-    return response => { return angular.copy(response.data.results, self.searchResults) };
+    return response => { return angular.copy(response.data.results, self.searchResults); };
   }
 
   _resetDetails() {

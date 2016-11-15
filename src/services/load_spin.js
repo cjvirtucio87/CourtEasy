@@ -6,7 +6,7 @@ export class LoadSpin {
   constructor() {
     this._dom = {
       getLoading() {
-        return $('i.fa-spin').first();
+        return $('i.fa-spin');
       }
     };
   }
