@@ -107,20 +107,21 @@ export default ['$stateProvider', '$urlRouterProvider', '$httpProvider', functio
           `
         },
         '1@': {
-          controller: ['$rootScope', function($rootScope) {
+          controller: ['$rootScope', 'OpinionShow', function($rootScope, OpinionShow) {
             const vm = this;
 
-            $rootScope.$on('opinion.ready', (ev, arg) => vm.opinion = arg);
+            function _storeFullText(ev, arg) {
+              OpinionShow.find(arg.id).then(html => vm.opinion = html);
+            }
+
+            $rootScope.$on('opinion.ready', _storeFullText);
           }],
           controllerAs: 'opinionCtrl',
           template:
-          `<section ng-if='opinionCtrl.opinion' class='row'>
-            <div class='col-md'>
-            </div>
-            <div class='col-md-6 flex-md-middle'>
+          `
+          <section ng-if='opinionCtrl.opinion' class='row'>
+            <div class='col-md-12'>
               <opinion-full opinion='opinionCtrl.opinion'></opinion-full>
-            </div>
-            <div class='col-md'>
             </div>
           </section>
           `
