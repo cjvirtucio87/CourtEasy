@@ -28,7 +28,6 @@ module.exports = {
   entry: ['bootstrap-loader', './src/app.js'],
   output: {
     path: __dirname + "/build",
-    publicPath: '/assets/',
     filename: '[name].bundle.js'
   },
   devServer: {

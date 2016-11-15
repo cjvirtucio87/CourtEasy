@@ -34,7 +34,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/assets/";
+/******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -66015,22 +66015,27 @@
 /* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function($) {'use strict';
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	exports.Component = exports.Ctrl = undefined;
+
+	var _jquery = __webpack_require__(9);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	// import $ from 'jquery';
 
 	var Ctrl = exports.Ctrl = function Ctrl($element) {
 	  _classCallCheck(this, Ctrl);
 
 	  // Scroll to full text upon loading.
-	  $('body').animate({
-	    scrollTop: $($element).offset().top
+	  (0, _jquery2.default)('body').animate({
+	    scrollTop: (0, _jquery2.default)($element).offset().top
 	  }, 'slow');
 	};
 
@@ -66043,7 +66048,6 @@
 	  },
 	  template: '\n  <div class=\'card\'>\n    <p class=\'card-text\' ng-bind-html=\'$ctrl.opinion\'></p>\n  </div>\n  '
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)))
 
 /***/ },
 /* 38 */
