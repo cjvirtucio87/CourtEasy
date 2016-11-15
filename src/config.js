@@ -54,6 +54,14 @@ export default ['$stateProvider', '$urlRouterProvider', '$httpProvider', functio
           `
         },
         '3@': {
+          controller: ['$state', function($state) {
+            const vm = this;
+
+            vm.toCaseFinder = function () {
+              $state.go('caseFinder');
+            };
+          }],
+          controllerAs: '$ctrl',
           template:
           `
           <section class='row'>
@@ -61,7 +69,7 @@ export default ['$stateProvider', '$urlRouterProvider', '$httpProvider', functio
             </div>
             <div class='col-md-6 flex-md-middle'>
               <p>Try it out today!</p>
-              <button class='btn btn-outline-primary btn-lg'>DEMO</button>
+              <button ng-click='$ctrl.toCaseFinder()' class='btn btn-outline-primary btn-lg'>DEMO</button>
             </div>
             <div class='col-md'>
             </div>
@@ -71,7 +79,7 @@ export default ['$stateProvider', '$urlRouterProvider', '$httpProvider', functio
       }
     })
     .state('caseFinder', {
-      url: '/:id',
+      url: '/finder',
       views: {
         '@': {
           template:
