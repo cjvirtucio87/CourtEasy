@@ -24,7 +24,7 @@ export default ['$stateProvider', '$urlRouterProvider', '$httpProvider', functio
           </section>
           `
         },
-        'case-finder-landing@': {
+        '1@': {
           template:
           `
           <section class='row'>
@@ -39,7 +39,7 @@ export default ['$stateProvider', '$urlRouterProvider', '$httpProvider', functio
           </section>
           `
         },
-        'case-finder-landing-typing@': {
+        '2@': {
           template:
           `
           <section class='row' id='landing-casefinder-typing'>
@@ -47,6 +47,21 @@ export default ['$stateProvider', '$urlRouterProvider', '$httpProvider', functio
             </div>
             <div class='col-md-6 flex-md-middle'>
               <p>This app interfaces with the <strong>Court Listener API</strong> to quickly serve the data you need to make your persuasive arguments.</p>
+            </div>
+            <div class='col-md'>
+            </div>
+          </section>
+          `
+        },
+        '3@': {
+          template:
+          `
+          <section class='row'>
+            <div class='col-md'>
+            </div>
+            <div class='col-md-6 flex-md-middle'>
+              <p>Try it out today!</p>
+              <button class='btn btn-outline-primary btn-lg'>DEMO</button>
             </div>
             <div class='col-md'>
             </div>
