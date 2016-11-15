@@ -12,8 +12,7 @@ export class LoadSpin {
   }
 
   _tryHide(elGetter) {
-    const $node = elGetter();
-    return Promise.try(() => $node.stop(true, true).hide());
+    return Promise.try(() => elGetter().stop(true, true).hide());
   }
 
   _killAnims() {

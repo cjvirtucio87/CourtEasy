@@ -1,6 +1,15 @@
 export class Ctrl {
+  constructor(LoadSpin) {
+    this.LoadSpin = LoadSpin;
+  }
+
+  _loading() {
+    this.LoadSpin.searching();
+  }
+
   search(keys) {
     const message = angular.copy(keys, []);
+    this._loading();
     return this.onType({$event: message});
   }
 
@@ -9,6 +18,8 @@ export class Ctrl {
     self.onSelect({ $event: angular.copy($item, {}) });
   }
 }
+
+Ctrl.$inject = ['LoadSpin'];
 
 export const Component = {
   controller: 'GeneralSearchCtrl',
@@ -26,6 +37,7 @@ export const Component = {
     </a>
   </script>
 
-  <input type='text' uib-typeahead="result.caseName for result in $ctrl.search($viewValue)" ng-model='$ctrl.query' ng-model-options='{debounce: 500}' typeahead-template-url='resultTpl.html' typeahead-on-select='$ctrl.select($item)' class='form-control'><span><i class='fa fa-spin fa-spinner'></i></span>
+  <input type='text' uib-typeahead="result.caseName for result in $ctrl.search($viewValue)" ng-model='$ctrl.query' ng-model-options='{debounce: 500}' typeahead-template-url='resultTpl.html' typeahead-on-select='$ctrl.select($item)' class='form-control'>
+  <i class='fa fa-spin fa-spinner fa-lg'></i>
   `
 };

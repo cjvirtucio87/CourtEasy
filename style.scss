@@ -14,6 +14,10 @@ section.row#landing {
   background-position: center;
 }
 
+i.fa-spinner {
+  visibility: hidden;
+}
+
 opinion-animate {
   transition: 1s linear all;
   -webkit-transition: 1s linear all;
