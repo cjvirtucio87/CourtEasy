@@ -82,6 +82,16 @@ export default ['$stateProvider', '$urlRouterProvider', '$httpProvider', functio
       url: '/finder',
       views: {
         '@': {
+          // Need to figure out how to not let this view load until you click on the previewed case.
+          controller: ['$rootScope', function($rootScope) {
+            const vm = this;
+
+            vm.readyOpinion = function (opinion) {
+              console.log(opinion);
+              $rootScope.$emit('opinion.ready', opinion);
+            };
+          }],
+          controllerAs: 'searchCtrl',
           template:
           `<section class='row'>
             <div class='col-md'>
@@ -89,7 +99,7 @@ export default ['$stateProvider', '$urlRouterProvider', '$httpProvider', functio
             <div class='col-md-6 flex-md-middle'>
               <h1 class='display-4'>Case Finder</h3>
               <p class='lead'>Look up a case</p>
-              <search-bar></search-bar>
+              <search-bar on-select='searchCtrl.readyOpinion($event)'></search-bar>
             </div>
             <div class='col-md'>
             </div>
@@ -97,23 +107,23 @@ export default ['$stateProvider', '$urlRouterProvider', '$httpProvider', functio
           `
         },
         '1@': {
+          controller: ['$rootScope', function($rootScope) {
+            const vm = this;
+
+            $rootScope.$on('opinion.ready', (ev, arg) => vm.opinion = arg);
+          }],
+          controllerAs: 'opinionCtrl',
           template:
-          `<section class='row'>
+          `<section ng-if='opinionCtrl.opinion' class='row'>
             <div class='col-md'>
             </div>
-            <div class='col-md-10 flex-md-middle'>
-              <opinion-full opinion='$ctrl.opinion'></opinion-full>
+            <div class='col-md-6 flex-md-middle'>
+              <opinion-full opinion='opinionCtrl.opinion'></opinion-full>
             </div>
             <div class='col-md'>
             </div>
           </section>
-          `,
-          // Need to figure out how to not let this view load until you click on the previewed case.
-          controller: ['opinion', function(opinion) {
-            this.opinion = opinion;
-          }],
-          controllerAs: '$ctrl'
-          }
+          `
         }
       }
     });

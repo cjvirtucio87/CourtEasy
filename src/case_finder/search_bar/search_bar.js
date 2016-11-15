@@ -36,7 +36,7 @@ export class Ctrl {
   }
 
   fullText(opinion) {
-    
+    this.onSelect({$event: opinion});
   }
 }
 
@@ -44,6 +44,9 @@ Ctrl.$inject = ['OpinionSearch', '$state', 'LoadSpin'];
 
 export const Component = {
   controller: 'SearchBarCtrl',
+  bindings: {
+    onSelect: '&'
+  },
   template:
   `
   <div class='row'>
