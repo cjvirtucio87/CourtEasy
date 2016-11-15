@@ -1,5 +1,4 @@
 require('../style.scss');
-require('bluebird');
 
 import angular from 'angular';
 import sanitize from 'angular-sanitize';

@@ -14,22 +14,23 @@ section.row#landing {
   background-position: center;
 }
 
-.opinion-animate {
-  -webkit-transition: 1s;
+opinion-animate {
+  transition: 1s linear all;
+  -webkit-transition: 1s linear all;
 }
 
-.opinion-animate.ng-enter {
+opinion-animate.ng-enter {
   opacity: 0;
 }
 
-.opinion-animate.ng-enter.ng-enter-active {
+opinion-animate.ng-enter.ng-enter-active {
   opacity: 1;
 }
 
-.opinion-animate.ng-leave {
+opinion-animate.ng-leave {
   opacity: 1;
 }
 
-.opinion-animate.ng-leave.ng-leave-active {
+opinion-animate.ng-leave.ng-leave-active {
   opacity: 0;
 }

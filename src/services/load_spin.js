@@ -1,20 +1,19 @@
-import $ from 'jquery';
+import Promise from 'bluebird';
 import map from 'lodash/map';
+import $ from 'jquery';
 
 export class LoadSpin {
   constructor() {
     this._dom = {
       getLoading() {
-        return $('i.fa-spin');
+        return $('i.fa-spin').first();
       }
     };
   }
 
   _tryHide(elGetter) {
-    return Promise.try(elGetter()
-      .stop(true, true)
-      .hide()
-      .then(() => true));
+    const $node = elGetter();
+    return Promise.try(() => $node.stop(true, true).hide());
   }
 
   _killAnims() {
@@ -29,10 +28,13 @@ export class LoadSpin {
 
   searching() {
     const self = this;
-    self._killAnims().then(self.loading(self));
+    self._killAnims().then(self._loading(self));
   }
 
-  success() {
-    this._dom.getLoading().hide();
+  success(self) {
+    return response => {
+      self._dom.getLoading().hide();
+      return response;
+    };
   }
 }

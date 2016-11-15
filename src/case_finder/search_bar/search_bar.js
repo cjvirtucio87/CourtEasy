@@ -6,6 +6,15 @@ export class Ctrl {
     this.searchResults = [];
   }
 
+  addTest() {
+    const len = this.testArr.length;
+    this.testArr.push(this.testArr[len-1] + 1);
+  }
+
+  removeTest() {
+    this.testArr.pop();
+  }
+
   search(keys) {
     const self = this;
     const present = self.present.bind(self);
@@ -13,7 +22,7 @@ export class Ctrl {
     self.LoadSpin.searching();
     return self.OpinionSearch
       .search(keys)
-      .then(self.LoadSpin.success)
+      .then(self.LoadSpin.success(self.LoadSpin))
       .then(present);
   }
 
@@ -32,7 +41,6 @@ export class Ctrl {
   }
 
   _resetDetails() {
-    console.log('firing');
     this.opinion = undefined;
   }
 }
@@ -44,6 +52,6 @@ export const Component = {
   template:
   `
   <general-search results='$ctrl.searchResults' on-select='$ctrl.select($event)' on-type='$ctrl.search($event)'></general-search>
-  <opinion-details class='opinion-animate' ng-if='$ctrl.opinion' on-fulltext='$ctrl.fullText($event)' opinion='$ctrl.opinion'></opinion-details>
+  <opinion-details class='opinion-details' ng-if='$ctrl.opinion' on-fulltext='$ctrl.fullText($event)' opinion='$ctrl.opinion'></opinion-details>
   `
 };
