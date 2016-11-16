@@ -65815,7 +65815,6 @@
 	          var vm = this;
 
 	          vm.readyOpinion = function (opinion) {
-	            console.log(opinion);
 	            $rootScope.$emit('opinion.ready', opinion);
 	          };
 	        }],

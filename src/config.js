@@ -86,7 +86,6 @@ export default ['$stateProvider', '$urlRouterProvider', '$httpProvider', functio
             const vm = this;
 
             vm.readyOpinion = function (opinion) {
-              console.log(opinion);
               $rootScope.$emit('opinion.ready', opinion);
             };
           }],
