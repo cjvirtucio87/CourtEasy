@@ -1,0 +1,13 @@
+{
+  "version": "0.1.0",
+  "command": "npm",
+  "tasks": [
+    {
+      // Build task, Ctrl+Shift+B
+      // "npm install --loglevel info"
+      "taskName": "begin",
+      "isBuildCommand": true,
+      "args": ["run", "begin"]
+    }
+  ]
+}

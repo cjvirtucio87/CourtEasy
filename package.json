@@ -7,6 +7,8 @@
     "deploy": "NODE_ENV=production webpack -p && node ./server.js",
     "postinstall": "NODE_ENV=production webpack",
     "dev": "webpack-dev-server --progress --colors",
+    "compile": "tsc && webpack",
+    "begin": "tsc && webpack && node ./server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
@@ -27,11 +29,6 @@
     "angular-ui-router": "^0.3.2",
     "async": "^2.1.2",
     "autoprefixer": "^6.5.3",
-    "babel-cli": "^6.18.0",
-    "babel-core": "^6.18.2",
-    "babel-loader": "^6.2.7",
-    "babel-polyfill": "^6.16.0",
-    "babel-preset-es2015": "^6.18.0",
     "bluebird": "^3.4.6",
     "bootstrap": "^4.0.0-alpha.5",
     "bootstrap-loader": "^1.3.0",
@@ -53,8 +50,11 @@
     "strip-json-comments": "^2.0.1",
     "style-loader": "^0.13.1",
     "tether": "^1.3.7",
+    "ts-loader": "^1.2.2",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.3"
   },
-  "cacheDirectories": ["node_modules"]
+  "cacheDirectories": [
+    "node_modules"
+  ]
 }

@@ -1,67 +1,39 @@
-export class Ctrl {
-  constructor (OpinionSearch, $state, LoadSpin) {
-    this.OpinionSearch = OpinionSearch;
-    this.$state = $state;
-    this.LoadSpin = LoadSpin;
-    this.searchResults = [];
-  }
-
-  _present(self) {
-    return response => { return angular.copy(response.data.results, self.searchResults); };
-  }
-
-  _resetDetails() {
-    this.opinion = undefined;
-  }
-
-  _success(self) {
-    return response => {
-      self.LoadSpin.success(self.LoadSpin);
-      return response;
+"use strict";
+var Ctrl = (function () {
+    function Ctrl(OpinionSearch, $state) {
+        this.OpinionSearch = OpinionSearch;
+        this.$state = $state;
+        this.searchResults = [];
+    }
+    Ctrl.prototype.search = function (keys) {
+        var self = this;
+        var present = self.present.bind(self);
+        self.resetDetails();
+        return self.OpinionSearch
+            .search(keys)
+            .then(self.present(self));
     };
-  }
-
-  search(keys) {
-    const self = this;
-    const present = self._present.bind(self);
-    self._resetDetails();
-    return self.OpinionSearch
-      .search(keys)
-      .then(self._success(self))
-      .then(self._present(self));
-  }
-
-  select(item) {
-    this.opinion = item;
-  }
-
-  fullText(opinion) {
-    this.onSelect({$event: opinion});
-  }
-}
-
-Ctrl.$inject = ['OpinionSearch', '$state', 'LoadSpin'];
-
-export const Component = {
-  controller: 'SearchBarCtrl',
-  bindings: {
-    onSelect: '&'
-  },
-  template:
-  `
-  <div class='row'>
-    <div class='col-md'>
-    </div>
-    <div class='col-md-6 flex-md-middle'>
-      <general-search results='$ctrl.searchResults' on-select='$ctrl.select($event)' on-type='$ctrl.search($event)'></general-search>
-    </div>
-    <div class='col-md'>
-    </div>
-  </div>
-  <div class='row'>
-    <div class='col-md'>
-      <opinion-details ng-show='$ctrl.opinion' on-fulltext='$ctrl.fullText($event)' opinion='$ctrl.opinion'></opinion-details>
-    </div>
-  </div>
-  `
+    Ctrl.prototype.select = function (item) {
+        this.opinion = item;
+    };
+    Ctrl.prototype.fullText = function (opinion) {
+        this.onSelect({ $event: opinion });
+    };
+    Ctrl.prototype.present = function (self) {
+        return function (response) { return angular.copy(response.data.results, self.searchResults); };
+    };
+    Ctrl.prototype.resetDetails = function () {
+        this.opinion = undefined;
+    };
+    Ctrl.$inject = ['OpinionSearch', '$state'];
+    return Ctrl;
+}());
+exports.Ctrl = Ctrl;
+exports.Component = {
+    controller: 'SearchBarCtrl',
+    bindings: {
+        onSelect: '&'
+    },
+    template: "\n  <div class='row'>\n    <div class='col-md'>\n    </div>\n    <div class='col-md-6 flex-md-middle'>\n      <general-search results='$ctrl.searchResults' on-select='$ctrl.select($event)' on-type='$ctrl.search($event)'></general-search>\n    </div>\n    <div class='col-md'>\n    </div>\n  </div>\n  <div class='row'>\n    <div class='col-md'>\n      <opinion-details ng-show='$ctrl.opinion' on-fulltext='$ctrl.fullText($event)' opinion='$ctrl.opinion'></opinion-details>\n    </div>\n  </div>\n  "
 };
+//# sourceMappingURL=search_bar.js.map

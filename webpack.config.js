@@ -25,17 +25,21 @@ const provide = new ProvidePlugin({
 });
 
 module.exports = {
-  entry: ['bootstrap-loader', './src/app.js'],
+  entry: ['bootstrap-loader', './src/app.ts'],
   output: {
     path: __dirname + "/build",
     filename: '[name].bundle.js'
+  },
+  resolve: {
+    // Add `.ts` and `.tsx` as a resolvable extension.
+    extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js']
   },
   devServer: {
     inline: true
   },
   module: {
     loaders: [
-       { test: /\.js$/, exclude: [/node_modules/], loader: 'babel-loader' },
+       { test: /\.ts$/, loader: 'ts-loader' },
        { test: /\.scss$/, exclude: [/node_modules/], loaders: ['style', 'css', 'sass'] },
        { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000' },
        { test: /\.(png|jpeg)$/, loader: 'url-loader?limit=8192' },
